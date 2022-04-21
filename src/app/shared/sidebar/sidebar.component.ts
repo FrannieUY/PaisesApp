@@ -1,20 +1,30 @@
 import { Component, OnInit } from '@angular/core';
+import { PaisService } from 'src/app/pais/services/pais.service';
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
-  styles: [
-    `
-    li
-      cursor: pointer
-    `
-  ]
+  styleUrls: ['./sidebar.component.sass']
 })
-export class SidebarComponent implements OnInit {
+export class SidebarComponent {
 
-  constructor() { }
+  get historial() {
+    return this.PaisService.historial;
+  }
 
-  ngOnInit(): void {
+  constructor(
+    private PaisService: PaisService
+  ) { }
+
+  buscar( value: string ) {
+    this.PaisService.buscarPais( value );
+    // console.log( 'Se busca:', value );
+  }
+
+  limpiar() {
+    console.log('limpiando historial...');
+    localStorage.clear();
+    window.location.reload();
   }
 
 }

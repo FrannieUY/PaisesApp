@@ -21,3 +21,27 @@
                 Por capital
             </li>
         </ul>
+
+<div 
+    *ngIf="historial.length > 0;"
+    class="bg-secondary rounded d-flex flex-column align-items-center p-1 m-1">
+    <div class="list-group list-reset m-2">
+        <a 
+            *ngFor="let item of historial;"
+            href="#"
+            (click)="buscar(item);" 
+            class="list-group-item list-group-item-action">
+            {{item | titlecase }}
+        </a>
+    </div>
+    
+    <div>
+        <button 
+            class="btn btn-danger" 
+            (click)="limpiar()">
+            Limpiar historial
+        </button>
+    </div>
+</div>
+
+
