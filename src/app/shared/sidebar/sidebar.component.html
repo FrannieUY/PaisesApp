@@ -26,11 +26,10 @@
     *ngIf="historial.length > 0;"
     class="bg-secondary rounded d-flex flex-column align-items-center p-1 m-1">
     <div class="list-group list-reset m-2">
-        <a 
+        <a
             *ngFor="let item of historial;"
-            href="#"
-            (click)="buscar(item);" 
-            class="list-group-item list-group-item-action">
+            class="list-group-item list-group-item-action"
+            (click)="buscar(item);">
             {{item | titlecase }}
         </a>
     </div>

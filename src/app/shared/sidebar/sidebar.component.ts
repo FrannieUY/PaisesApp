@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { PaisService } from 'src/app/pais/services/pais.service';
 
 @Component({
@@ -7,6 +7,8 @@ import { PaisService } from 'src/app/pais/services/pais.service';
   styleUrls: ['./sidebar.component.sass']
 })
 export class SidebarComponent {
+
+  @Output() onClick : EventEmitter<string> = new EventEmitter();
 
   get historial() {
     return this.PaisService.historial;
@@ -17,8 +19,8 @@ export class SidebarComponent {
   ) { }
 
   buscar( value: string ) {
-    this.PaisService.buscarPais( value );
-    // console.log( 'Se busca:', value );
+    this.onClick.emit( value );
+    console.log( "emitiendo:", value );
   }
 
   limpiar() {
