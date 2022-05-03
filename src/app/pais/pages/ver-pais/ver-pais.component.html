@@ -9,7 +9,7 @@
     <div
     class="row">
         <div class="col-12">
-            <h1>País: <small>{{pais.name}}</small></h1>
+            <h1>País: <small>{{pais.name.common}}</small></h1>
             <hr>
         </div>
     </div>
@@ -17,7 +17,7 @@
     <div class="row">
         <div class="col-4">
             <h3>Bandera</h3>
-            <img [src]="pais.flag" class="img-thumbnail">
+            <img [src]="pais.flags.png" class="img-thumbnail">
         </div>
 
         <div class="col">
@@ -30,6 +30,15 @@
                     <strong>Continente:</strong> {{ pais.region }}
                 </li>
             </ul>
+        </div>
+    </div>
+
+    <h3>Traducciones</h3>
+    <div class="row">
+        <div class="col">
+
+            <span> {{pais.translations.spa.official}} </span>
+
         </div>
     </div>
 </ng-template>

@@ -11,5 +11,7 @@ export class PaisTablaComponent{
 
   @Input() paises: Country[] = [];
 
-  constructor(private PaisService: PaisService) { }
+  constructor(private PaisService: PaisService) { 
+    console.log(this.paises);
+  }
 }

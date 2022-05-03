@@ -13,10 +13,11 @@
                     <td>
                         <img class="small-flag" src="{{this.pais.flags.png}}" alt="country's flag">
                     </td>
-                    <td>{{this.pais.name}}</td>
+                    <td>{{this.pais.name.common}}, {{this.pais.capital}}</td>
                     <td>{{this.pais.population | number }}</td>
                     <td>
-                        <a [routerLink]="['/pais', this.pais.cca2]">Ver...</a>
+                        <a [routerLink]="['/pais', this.pais.cca2]"
+                        >Ver...</a>
                     </td>
                 </tr>
             </tbody>
