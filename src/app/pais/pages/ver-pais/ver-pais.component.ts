@@ -12,7 +12,7 @@ import { PaisService } from '../../services/pais.service';
 })
 export class VerPaisComponent implements OnInit {
 
-  pais!: Country;
+  pais!: Country[];
   hayError: boolean = false;
 
   constructor(

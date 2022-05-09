@@ -9,7 +9,7 @@ import { Country } from '../interfaces/pais.interface';
 })
 export class PaisService {
 
-  private apiUrl: string = 'https://restcountries.com/v2';
+  private apiUrl: string = 'https://restcountries.com/v3.1';
   private _historial: string[] = [];
 
   get historial() {
