@@ -1,25 +1,33 @@
-<h2>Por Región</h2>
-<hr>
-
-<div class="row">
-    <div class="col">
-        <app-pais-input 
-            (onEnter)="buscar( $event )"
-            placeholder="buscar region..."></app-pais-input>
+<div class="animate__animated animate__fadeIn animate__faster">
+    <h3>Buscar por region: <small>{{ regionActiva | titlecase }}</small> </h3>
+    <hr>
+    
+    <h5>Seleccione la region</h5>
+    
+    <!--Formas de condicionar clases-->
+    
+    <!-- [class.btn-primary]="region === regionActiva" -->
+    <!-- [ngClass]="{
+        'btn-primary': regionActiva === region,
+        'btn-primary-outline': regionActiva !== region
+    }" -->
+    <div class="row">
+        <div class="col">
+            <button *ngFor="let region of regiones"
+                    [class]="getClaseCSS( region )"
+                    (click)="activarRegion( region )">
+                {{ region | titlecase }} 
+            </button>
+        </div>
     </div>
 </div>
 
-<hr>
-<div 
-    *ngIf="hayError"
-    class="alert alert-danger">
-    No se encontró nada con el término ASDF
-</div>
+
 
 <div *ngIf="paises.length > 0" class="row">
     <div class="col">
-        <app-pais-tabla [paises] = "paises"></app-pais-tabla>
+
+        <app-pais-tabla 
+            [paises]="paises"></app-pais-tabla>
     </div>
 </div>
-
-

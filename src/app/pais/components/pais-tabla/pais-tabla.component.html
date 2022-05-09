@@ -8,7 +8,9 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let pais of paises; let i = index;">
+                <tr 
+                    *ngFor="let pais of paises; let i = index;"
+                    class="animate__animated animate__fadeInBottomRight animate__faster">
                     <td>{{i + 1 }}</td>
                     <td>
                         <img class="small-flag" src="{{this.pais.flags.png}}" alt="country's flag">

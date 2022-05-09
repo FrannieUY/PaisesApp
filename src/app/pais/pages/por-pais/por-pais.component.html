@@ -1,17 +1,21 @@
-<h2>Por País</h2>
-<hr>
-
-
-<div class="row">
-    <div class="col">
-        <app-pais-input 
-            (onEnter)="buscar( $event )"
-            (onDebounce)="sugerencias( $event )"
-            placeholder="Buscar pais..."></app-pais-input>
+<div class="animate__animated animate__fadeIn animate__faster">
+    <h2>Por País</h2>
+    <hr>
+    
+    
+    <div class="row">
+        <div class="col">
+            <app-pais-input 
+                (onEnter)="buscar( $event )"
+                (onDebounce)="sugerencias( $event )"
+                placeholder="Buscar pais..."></app-pais-input>
+        </div>
     </div>
+    
+    <hr>
 </div>
 
-<hr>
+
 <div
     *ngIf="hayError"
     class="alert alert-danger">

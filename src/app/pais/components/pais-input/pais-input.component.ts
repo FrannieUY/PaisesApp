@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Subject } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
+import { PaisService } from '../../services/pais.service';
 
 @Component({
   selector: 'app-pais-input',
@@ -32,7 +33,7 @@ export class PaisInputComponent implements OnInit {
   }
 
   buscar() {
-  this.onEnter.emit( this.termino );
+    this.onEnter.emit( this.termino );
   }
 
   teclaPresionada() {
