@@ -33,11 +33,14 @@ export class PaisInputComponent implements OnInit {
   }
 
   buscar() {
-    this.onEnter.emit( this.termino );
+    this.onEnter.emit( this.termino.toLowerCase() );
   }
 
   teclaPresionada() {
-    this.debouncer.next( this.termino )
+    if (this.termino !== '') {
+      this.debouncer.next( this.termino.toLowerCase() )
+    }
+
   }
 
 
