@@ -1,5 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Observable } from 'rxjs';
 import { PaisService } from 'src/app/pais/services/pais.service';
+import { SidebarService } from './sidebar.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -8,19 +10,21 @@ import { PaisService } from 'src/app/pais/services/pais.service';
 })
 export class SidebarComponent {
 
-  @Output() onClick : EventEmitter<string> = new EventEmitter();
+  
 
   get historial() {
-    return this.PaisService.historial;
+    return this.SidebarService.historial;
   }
 
   constructor(
-    private PaisService: PaisService
+    private SidebarService: SidebarService
   ) { }
 
   buscar( value: string ) {
-    this.onClick.emit( value );
-    console.log( "emitiendo:", value );
+    // this.onClick.emit( value );
+    // console.log( "emitiendo:", value );
+    this.SidebarService.setTarget( value );
+    // console.log( this.historial );
   }
 
   limpiar() {
